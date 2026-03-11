@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Репетитори від Бога</title>
+<style>
+/* Загальні стилі */ 
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    text-align: center;
+    color: #333;
+}
+
+header {
+    background: #222;
+    color: white;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+header p {
+    margin: 5px 0 0 0;
+    font-size: 1em;
+}
+
+/* Навігація */
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: #333;
+    padding: 10px 0;
+}
+
+.nav-item {
+    position: relative;
+    margin: 0 15px;
+}
+
+.main-link {
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 15px;
+    display: inline-block;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.main-link:hover {
+    background: #4CAF50;
+}
+
+/* Занавіси (curtain) */
+.curtain {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background: #444;
+    display: none;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.nav-item:hover .curtain {
+    display: flex;
+}
+
+.curtain button {
+    background: #555;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    transition: background 0.3s;
+}
+
+.curtain button:hover {
+    background: #4CAF50;
+}
+
+/* Сторінки */
+.page {
+    display: none;
+    padding: 40px 20px;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Картки */
+.card {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 12px;
+    max-width: 800px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    text-align: left;
+}
+
+.card h2, .card h3 {
+    color: #222;
+}
+
+.card ul {
+    padding-left: 20px;
+}
+
+/* Зображення */
+.page-img {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Кнопки */
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1em;
+    transition: background 0.3s, color 0.3s;
+}
+
+button:hover {
+    background: #4CAF50;
+    color: white;
+}
+
+/* Адаптивність */
+@media screen and (max-width: 900px) {
+    nav {
+        flex-direction: column;
+    }
+    .nav-item {
+        margin: 5px 0;
+    }
+}
+</style>
+
+<script>
+function showPage(id){
+    let pages = document.querySelectorAll(".page");
+    pages.forEach(function(p){
+        p.classList.remove("active");
+    });
+    document.getElementById(id).classList.add("active");
+}
+</script>
+</head>
+
+<body>
+
+<header>
+<h1>Репетитори від Бога</h1>
+<p>Платформа для ефективного вивчення іноземних мов</p>
+</header>
+
+<nav>
+<div class="nav-item">
+<span class="main-link">Головна</span>
+<div class="curtain">
+<button onclick="showPage('home')">🏠 На головну</button>
+<button onclick="showPage('about')">📄 Про сайт</button>
+</div>
+</div>
+
+<div class="nav-item">
+<span class="main-link">Репетитори</span>
+<div class="curtain">
+<button onclick="showPage('tutors')">👨‍🏫 Репетитори</button>
+</div>
+</div>
+
+<div class="nav-item">
+<span class="main-link">Мови</span>
+<div class="curtain">
+<button onclick="showPage('english')">Англійська</button>
+<button onclick="showPage('spanish')">Іспанська</button>
+<button onclick="showPage('french')">Французька</button>
+<button onclick="showPage('german')">Німецька</button>
+</div>
+</div>
+
+<div class="nav-item">
+<span class="main-link">Рівні</span>
+<div class="curtain">
+<button onclick="showPage('a1')">A1</button>
+<button onclick="showPage('a2')">A2</button>
+<button onclick="showPage('b1')">B1</button>
+<button onclick="showPage('b2')">B2</button>
+<button onclick="showPage('c1')">C1</button>
+<button onclick="showPage('c2')">C2</button>
+</div>
+</div>
+</nav>
+
+<!-- ГОЛОВНА -->
+<div id="home" class="page active">
+<div class="card">
+<h2>Ласкаво просимо</h2>
+<img src="https://cdn.pixabay.com/photo/2019/01/30/14/52/education-3969332_1280.jpg" alt="Навчання онлайн" class="page-img">
+<p>Сайт <b>“Репетитори від Бога”</b> допомагає учням і студентам ефективно вивчати мови. Наші викладачі мають великий досвід та сучасні методики.</p>
+<p>Мови відкривають нові можливості: навчання, робота та подорожі. Знання кількох мов покращує кар’єрні перспективи та комунікацію з людьми з різних країн.</p>
+</div>
+</div>
+
+<!-- ПРО САЙТ -->
+<div id="about" class="page">
+<div class="card">
+<h2>Про сайт</h2>
+<img src="https://cdn.pixabay.com/photo/2016/11/18/15/20/team-1837476_1280.jpg" alt="Команда платформи" class="page-img">
+<p>Платформа об'єднує викладачів і студентів на одній зручній онлайн-платформі. Ми прагнемо зробити навчання доступним та ефективним.</p>
+</div>
+<div class="card">
+<h3>Наші переваги</h3>
+<ul>
+<li>Досвідчені викладачі з міжнародними сертифікатами</li>
+<li>Індивідуальні програми та сучасні методики</li>
+<li>Онлайн та офлайн заняття</li>
+<li>Інтерактивні вправи та тести</li>
+<li>Регулярний зворотний зв'язок</li>
+</ul>
+</div>
+</div>
+
+<!-- РЕПЕТИТОРИ -->
+<div id="tutors" class="page">
+<div class="card">
+<h2>Наші репетитори</h2>
+<img src="https://cdn.pixabay.com/photo/2016/03/27/22/22/people-1281560_1280.jpg" alt="Викладачі" class="page-img">
+<p>Наші викладачі спеціалізуються на англійській, французькій, іспанській, німецькій, китайській та інших мовах. Вони допомагають студентам досягати високих результатів.</p>
+</div>
+<div class="card">
+<h3>Чому обрати наших викладачів</h3>
+<ul>
+<li>Великий досвід та міжнародні сертифікати</li>
+<li>Індивідуальні програми під ваш рівень та цілі</li>
+<li>Практика живого спілкування</li>
+<li>Підготовка до міжнародних іспитів</li>
+<li>Мотивація та підтримка</li>
+<li>Онлайн навчання з будь-якого місця</li>
+</ul>
+</div>
+</div>
+
+<!-- АНГЛІЙСЬКА -->
+<div id="english" class="page">
+<div class="card">
+<h2>Англійська мова</h2>
+<img src="https://cdn.pixabay.com/photo/2017/08/10/03/03/london-2614976_1280.jpg" alt="Англійська" class="page-img">
+<p>Англійська — найпопулярніша мова світу. Використовується у бізнесі, освіті та IT. Відкриває можливості для навчання за кордоном.</p>
+</div>
+<div class="card">
+<h3>Що ви будете вивчати</h3>
+<ul>
+<li>Граматику та побудову речень</li>
+<li>Словниковий запас за темами</li>
+<li>Читання та розуміння текстів</li>
+<li>Аудіювання та сприйняття живої мови</li>
+<li>Розмовну практику та підготовку до IELTS, TOEFL</li>
+</ul>
+</div>
+</div>
+
+<!-- ІСПАНСЬКА -->
+<div id="spanish" class="page">
+<div class="card">
+<h2>Іспанська мова</h2>
+<img src="https://cdn.pixabay.com/photo/2017/05/13/22/38/madrid-2316078_1280.jpg" alt="Іспанська" class="page-img">
+<p>Іспанська — офіційна у багатьох країнах Латинської Америки та Європи. Володіння мовою відкриває можливості для подорожей та навчання.</p>
+</div>
+<div class="card">
+<h3>Що ви будете вивчати</h3>
+<ul>
+<li>Граматику та побудову речень</li>
+<li>Словниковий запас для спілкування</li>
+<li>Читання та розуміння текстів</li>
+<li>Аудіювання та розуміння носіїв</li>
+<li>Розмовну практику та культурні особливості</li>
+<li>Підготовку до іспитів DELE</li>
+</ul>
+</div>
+</div>
+
+<!-- ФРАНЦУЗЬКА -->
+<div id="french" class="page">
+<div class="card">
+<h2>Французька мова</h2>
+<img src="https://cdn.pixabay.com/photo/2016/11/21/16/12/paris-1846070_1280.jpg" alt="Французька" class="page-img">
+<p>Французька — мова мистецтва, науки та міжнародного спілкування. Використовується у Європі, Африці та Канаді.</p>
+</div>
+<div class="card">
+<h3>Що ви будете вивчати</h3>
+<ul>
+<li>Граматику та складні речення</li>
+<li>Словниковий запас для повсякденного та професійного спілкування</li>
+<li>Читання та розуміння французької літератури</li>
+<li>Аудіювання та сприйняття живої мови</li>
+<li>Розмовну практику та культурні нюанси</li>
+<li>Підготовку до DELF та DALF</li>
+</ul>
+</div>
+</div>
+
+<!-- НІМЕЦЬКА -->
+<div id="german" class="page">
+<div class="card">
+<h2>Німецька мова</h2>
+<img src="https://cdn.pixabay.com/photo/2016/03/27/21/57/berlin-1280782_1280.jpg" alt="Німецька" class="page-img">
+<p>Німецька — поширена у Європі, використовується у науці, бізнесі та культурі. Знання відкриває можливості для навчання в університетах та роботи.</p>
+</div>
+<div class="card">
+<h3>Що ви будете вивчати</h3>
+<ul>
+<li>Граматику та побудову речень</li>
+<li>Словниковий запас для повсякденного та професійного спілкування</li>
+<li>Читання та розуміння текстів</li>
+<li>Аудіювання та сприйняття носіїв мови</li>
+<li>Розмовну практику та підготовку до Goethe-Zertifikat, TestDaF</li>
+</ul>
+</div>
+</div>
+
+<!-- РІВНІ -->
+<div id="a1" class="page">
+<div class="card">
+<h2>A1 — Початковий рівень</h2>
+<img src="https://cdn.pixabay.com/photo/2018/03/27/21/48/education-3265362_1280.jpg" alt="A1" class="page-img">
+<p>Базові слова та фрази, прості питання та розуміння простих інструкцій.</p>
+</div>
+</div>
+
+<div id="a2" class="page">
+<div class="card">
+<h2>A2 — Базовий рівень</h2>
+<img src="https://cdn.pixabay.com/photo/2017/08/10/03/03/books-2614975_1280.jpg" alt="A2" class="page-img">
+<p>Прості ситуації спілкування: покупки, подорожі, знайомство. Розуміння простих текстів та написання коротких повідомлень.</p>
+</div>
+</div>
+
+<div id="b1" class="page">
+<div class="card">
+<h2>B1 — Середній рівень</h2>
+<img src="https://cdn.pixabay.com/photo/2018/02/01/21/38/reading-3124150_1280.jpg" alt="B1" class="page-img">
+<p>Можна підтримувати розмову на знайомі теми, обговорювати робочі ситуації та подорожі. Розуміння основного змісту новин та статей.</p>
+</div>
+</div>
+
+<div id="b2" class="page">
+<div class="card">
+<h2>B2 — Вище середнього</h2>
+<img src="https://cdn.pixabay.com/photo/2017/01/10/19/05/reading-1968329_1280.jpg" alt="B2" class="page-img">
+<p>Спілкування з носіями мови без труднощів, аргументація, обговорення складних тем, написання детальних текстів.</p>
+</div>
+</div>
+
+<div id="c1" class="page">
+<div class="card">
+<h2>C1 — Просунутий рівень</h2>
+<img src="https://cdn.pixabay.com/photo/2017/08/10/03/03/learning-2614980_1280.jpg" alt="C1" class="page-img">
+<p>Добре розуміння складних текстів, технічної та професійної лексики, вільне використання граматики та стилів.</p>
+</div>
+</div>
+
+<div id="c2" class="page">
+<div class="card">
+<h2>C2 — Вільне володіння</h2>
+<img src="https://cdn.pixabay.com/photo/2015/06/24/16/39/study-820274_1280.jpg" alt="C2" class="page-img">
+<p>Найвищий рівень знання мови. Вільне висловлення думок, розуміння всіх текстів та ідіом, професійна робота з мовою.</p>
+</div>
+</div>
+
+</body>
+</html>
